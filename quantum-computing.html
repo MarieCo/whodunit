@@ -31,8 +31,8 @@
                 ],
                 picture: "images/beryl-smith.jpeg",
                 collaborators: [
-                    { name: "Dr. Alice Brown", link: "#alice-brown" },
-                    { name: "Dr. Bob White", link: "#bob-white" }
+                    { name: "Dr. Alice Brown", link: "public-policy.html#alice-brown" },
+                    { name: "Dr. Bob White", link: "geophysics.html#bob-white" }
                 ]
             }
         ];
@@ -53,6 +53,12 @@
                         <strong>Locations & Availability:</strong>
                         <ul>
                             ${res.locations.map(loc => `<li>${loc.building}: ${loc.time}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="collaborators">
+                        <strong>Collaborators:</strong>
+                        <ul>
+                            ${res.collaborators.map(collab => `<li><a href="${collab.link}">${collab.name}</a></li>`).join('')}
                         </ul>
                     </div>
                 </div>

@@ -31,7 +31,7 @@
                 ],
                 picture: "images/john-lemon.jpeg",
                 collaborators: [
-                    { name: "Dr. Charlie Green", link: "#charlie-green" }
+                    { name: "Dr. Charlie Green", link: "climate-science.html#charlie-green" }
                 ]
             }
         ];
@@ -52,6 +52,12 @@
                         <strong>Locations & Availability:</strong>
                         <ul>
                             ${res.locations.map(loc => `<li>${loc.building}: ${loc.time}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="collaborators">
+                        <strong>Collaborators:</strong>
+                        <ul>
+                            ${res.collaborators.map(collab => `<li><a href="${collab.link}">${collab.name}</a></li>`).join('')}
                         </ul>
                     </div>
                 </div>
