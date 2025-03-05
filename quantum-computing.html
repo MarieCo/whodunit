@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Computing Researchers</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .researcher { border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px; display: flex; align-items: center; }
+        .info { margin-left: 15px; }
+        .name { font-size: 1.5em; font-weight: bold; }
+        img { width: 100px; height: 100px; border-radius: 50%; }
+    </style>
+</head>
+<body>
+    <h1>Quantum Computing Research Group</h1>
+    <a href="index.html">← Back to Research Groups</a>
+
+    <div id="researchers"></div>
+
+    <script>
+        const researchers = [
+            {
+                id: "beryl-smith",
+                name: "Dr. Beryl Smith",
+                bio: "Expert in quantum computing with a focus on secure communications.",
+                interest: "Quantum cryptography, secure communication protocols",
+                locations: [
+                    { building: "Building A", time: "Mon 9AM-12PM" },
+                    { building: "Building B", time: "Wed 2PM-5PM" }
+                ],
+                picture: "images/beryl-smith.jpeg",
+                collaborators: [
+                    { name: "Dr. Alice Brown", link: "#alice-brown" },
+                    { name: "Dr. Bob White", link: "#bob-white" }
+                ]
+            }
+        ];
+
+        const container = document.getElementById("researchers");
+
+        researchers.forEach(res => {
+            const div = document.createElement("div");
+            div.className = "researcher";
+            div.id = res.id;
+            div.innerHTML = `
+                <img src="${res.picture}" alt="${res.name}">
+                <div class="info">
+                    <div class="name">${res.name}</div>
+                    <div class="bio">${res.bio}</div>
+                    <div class="interest"><strong>Research Interest:</strong> ${res.interest}</div>
+                    <div class="locations">
+                        <strong>Locations & Availability:</strong>
+                        <ul>
+                            ${res.locations.map(loc => `<li>${loc.building}: ${loc.time}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+            container.appendChild(div);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI in Healthcare Researchers</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .researcher { border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px; display: flex; align-items: center; }
+        .info { margin-left: 15px; }
+        .name { font-size: 1.5em; font-weight: bold; }
+        img { width: 100px; height: 100px; border-radius: 50%; }
+    </style>
+</head>
+<body>
+    <h1>AI in Healthcare Research Group</h1>
+    <a href="index.html">← Back to Research Groups</a>
+
+    <div id="researchers"></div>
+
+    <script>
+        const researchers = [
+            {
+                id: "john-lemon",
+                name: "Dr. John Lemon",
+                bio: "AI researcher exploring deep learning models for healthcare.",
+                interest: "Neural networks, AI for medical diagnostics",
+                locations: [
+                    { building: "Building C", time: "Tue 10AM-1PM" },
+                    { building: "Building D", time: "Fri 3PM-6PM" }
+                ],
+                picture: "images/john-lemon.jpeg",
+                collaborators: [
+                    { name: "Dr. Charlie Green", link: "#charlie-green" }
+                ]
+            }
+        ];
+
+        const container = document.getElementById("researchers");
+
+        researchers.forEach(res => {
+            const div = document.createElement("div");
+            div.className = "researcher";
+            div.id = res.id;
+            div.innerHTML = `
+                <img src="${res.picture}" alt="${res.name}">
+                <div class="info">
+                    <div class="name">${res.name}</div>
+                    <div class="bio">${res.bio}</div>
+                    <div class="interest"><strong>Research Interest:</strong> ${res.interest}</div>
+                    <div class="locations">
+                        <strong>Locations & Availability:</strong>
+                        <ul>
+                            ${res.locations.map(loc => `<li>${loc.building}: ${loc.time}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+            container.appendChild(div);
+        });
+    </script>
+</body>
+</html>

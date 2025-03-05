@@ -3,122 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Researcher Directory</title>
+    <title>Research Groups</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
-        .researcher { border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px; display: flex; align-items: center; }
-        .info { margin-left: 15px; }
-        .name { font-size: 1.5em; font-weight: bold; }
-        .location, .time, .interest { margin-top: 5px; }
-        img { width: 100px; height: 100px; border-radius: 50%; }
+        .group { border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
+        a { text-decoration: none; font-weight: bold; color: #007BFF; }
     </style>
 </head>
 <body>
-    <h1>Researcher Directory</h1>
-    <div id="researchers"></div>
-
-    <script>
-        const researchers = [
-            {
-                id: "beryl-smith",
-                name: "Dr. Beryl Smith",
-                bio: "Expert in quantum computing with a focus on secure communications.",
-                interest: "Quantum cryptography, secure communication protocols",
-                locations: [
-                    { building: "Building A", time: "Mon 9AM-12PM" },
-                    { building: "Building B", time: "Wed 2PM-5PM" }
-                ],
-                picture: "images/beryl-smith.jpeg",
-                collaborators: [
-                    { name: "Dr. Alice Brown", link: "#alice-brown" },
-                    { name: "Dr. Bob White", link: "#bob-white" }
-                ]
-            },
-            {
-                id: "john-lemon",
-                name: "Dr. John Lemon",
-                bio: "AI researcher exploring deep learning models for healthcare.",
-                interest: "Neural networks, AI for medical diagnostics",
-                locations: [
-                    { building: "Building C", time: "Tue 10AM-1PM" },
-                    { building: "Building D", time: "Fri 3PM-6PM" }
-                ],
-                picture: "images/john-lemon.jpeg",
-                collaborators: [
-                    { name: "Dr. Charlie Green", link: "#charlie-green" }
-                ]
-            },
-            {
-                id: "alice-brown",
-                name: "Dr. Alice Brown",
-                bio: "Emeritus Professor of Politics with contributions to public service.",
-                interest: "Public policy, governance, gender equality",
-                locations: [
-                    { building: "Building E", time: "Thu 11AM-2PM" }
-                ],
-                picture: "images/alice-brown.jpeg",
-                collaborators: [
-                    { name: "Dr. Beryl Smith", link: "#beryl-smith" }
-                ]
-            },
-            {
-                id: "bob-white",
-                name: "Dr. Bob White",
-                bio: "Geophysicist specializing in Earth's dynamic crust.",
-                interest: "Volcanology, seismic activity, Earth's crust dynamics",
-                locations: [
-                    { building: "Building A", time: "Mon 1PM-4PM" },
-                    { building: "Building C", time: "Wed 9AM-12PM" }
-                ],
-                picture: "images/bob-white.jpeg",
-                collaborators: [
-                    { name: "Dr. Beryl Smith", link: "#beryl-smith" }
-                ]
-            },
-            {
-                id: "charlie-green",
-                name: "Dr. Charlie Green",
-                bio: "Researcher in environmental science focusing on climate change.",
-                interest: "Climate modeling, sustainable development",
-                locations: [
-                    { building: "Building B", time: "Tue 2PM-5PM" },
-                    { building: "Building D", time: "Thu 10AM-1PM" }
-                ],
-                picture: "images/charlie-green.jpeg",
-                collaborators: [
-                    { name: "Dr. John Lemon", link: "#john-lemon" }
-                ]
-            }
-        ];
-
-        const container = document.getElementById("researchers");
-
-        researchers.forEach(res => {
-            const div = document.createElement("div");
-            div.className = "researcher";
-            div.id = res.id;
-            div.innerHTML = `
-                <img src="${res.picture}" alt="${res.name}">
-                <div class="info">
-                    <div class="name">${res.name}</div>
-                    <div class="bio">${res.bio}</div>
-                    <div class="interest"><strong>Research Interest:</strong> ${res.interest}</div>
-                    <div class="locations">
-                        <strong>Locations & Availability:</strong>
-                        <ul>
-                            ${res.locations.map(loc => `<li>${loc.building}: ${loc.time}</li>`).join('')}
-                        </ul>
-                    </div>
-                    <div class="collaborators">
-                        <strong>Collaborators:</strong>
-                        <ul>
-                            ${res.collaborators.map(collab => `<li><a href="${collab.link}">${collab.name}</a></li>`).join('')}
-                        </ul>
-                    </div>
-                </div>
-            `;
-            container.appendChild(div);
-        });
-    </script>
+    <h1>Research Groups</h1>
+    <div class="group">
+        <a href="quantum-computing.html">Quantum Computing</a>
+    </div>
+    <div class="group">
+        <a href="ai-healthcare.html">AI in Healthcare</a>
+    </div>
+    <div class="group">
+        <a href="geophysics.html">Geophysics</a>
+    </div>
+    <div class="group">
+        <a href="climate-science.html">Climate Science</a>
+    </div>
 </body>
 </html>
